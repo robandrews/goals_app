@@ -1,0 +1,7 @@
+All Public Goals
+<br>
+<ul>
+<% @goals.each do |goal| %>
+<li><%= link_to goal.name, goal_url(goal) %></li>
+<% end %>
+</ul>

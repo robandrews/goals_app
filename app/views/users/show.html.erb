@@ -1,0 +1,26 @@
+<h2><%= @user.username %>'s Goal Page</h2>
+
+<h3>All Goals</h3>
+<ul>
+  <% @user.goals.each do |goal| %>
+    <li> <%= link_to "#{goal.name}", goal %>
+       <%= button_to "Delete", goal_url(goal), :method => :delete%></li>
+  <% end %>
+</ul>
+
+<h4>Add Goal</h4>
+<form action= "<%= user_goals_url(@user) %>" method="post">
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Goal Name
+  <input type="text" name="goal[name]" >
+  </label>
+  <input type="hidden" name="goal[public]" value="false">
+    <input type="checkbox" name="goal[public]" value="true" id="public">Public?
+
+  <p><input type="submit" value="Create Goal"></p>
+</form>
+
+<br><br>
+<%= link_to "Community Goals", goals_url %>

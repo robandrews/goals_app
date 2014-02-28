@@ -1,4 +1,8 @@
-<h2><%= @user.username %>'s Goal Page</h2>
+<h2><%= @user.username %>'s Page</h2>
+
+<h4>Leave a comment for <%= @user.username %></h4>
+
+
 
 <h3>All Goals</h3>
 <ul>
@@ -7,7 +11,7 @@
        <%= button_to "Delete", goal_url(goal), :method => :delete%></li>
   <% end %>
 </ul>
-
+<hr>
 <h4>Add Goal</h4>
 <form action= "<%= user_goals_url(@user) %>" method="post">
 
@@ -23,4 +27,3 @@
 </form>
 
 <br><br>
-<%= link_to "Community Goals", goals_url %>

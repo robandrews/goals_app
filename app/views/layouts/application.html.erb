@@ -15,7 +15,9 @@
     <%= link_to "Sign In", new_session_url %>
     <%= link_to "Sign Up", new_user_url %>
   <%end%>
-
+  <br><br>
+  <%= link_to "Community Goals", goals_url %>
+  <br><hr>
   <%if flash[:errors]%>
     <%= flash[:errors].to_json %>
   <%end%>
